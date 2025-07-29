@@ -21,7 +21,7 @@ export const useFarmingData = (): FarmingDataHook => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/recommend?lat=${location.latitude}&lon=${location.longitude}`
+        `https://climate-farming-advisory-backend-production.up.railway.app/recommend?lat=${location.latitude}&lon=${location.longitude}`
       );
 
       if (!response.ok) {
@@ -33,7 +33,7 @@ export const useFarmingData = (): FarmingDataHook => {
     } catch (err) {
       const errorMessage = err instanceof Error 
         ? err.message 
-        : 'Failed to fetch farming recommendations. Please check if the backend server is running on http://localhost:8000.';
+        : 'Failed to fetch farming recommendations. Please check if the backend server is running on https://climate-farming-advisory-backend-production.up.railway.app/.';
       
       setError(errorMessage);
     } finally {

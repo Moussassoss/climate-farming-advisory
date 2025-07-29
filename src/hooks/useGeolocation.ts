@@ -50,7 +50,7 @@ export const useGeolocation = (): GeolocationHook => {
       },
       {
         enableHighAccuracy: true,
-        timeout: 10000,
+        timeout: 100000,
         maximumAge: 60000,
       }
     );
